@@ -1,51 +1,58 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Title of the MaterialApp',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),      
-      // home: MyFirstWidget(),
-      home: MyFirstSfWidget(),
+      home: const MyFirstWidget(),
+      // home: const MyFirstSfWidget(),
     );
   }
 }
 
 class MyFirstWidget extends StatelessWidget {
   @override
-  var i = 0;
+  
+  const MyFirstWidget();
+
   Widget build(BuildContext context) {
-    return Container(
+    String runtimeType(){
+      return context.runtimeType.toString();
+    }
+      return Container(
       child: Center(
-        child: Text("StateLess Hello! " + (i++).toString()),
+        child: Text(runtimeType()+ " -- Stateless runtime type"),
       ),
     );
   }
 }
 
 class MyFirstSfWidget extends StatefulWidget {
+  const MyFirstSfWidget();
+
   @override
   State<StatefulWidget> createState() {
-    return _MyAppState();
+    return _AppState();
   }
 }
 
-class _MyAppState extends State<MyFirstSfWidget> {
-  var i = 0;
-
+class _AppState extends State<MyFirstSfWidget> {
   Widget build(BuildContext context) {
-    i++;
+    String runtimeType(){
+      return context.runtimeType.toString();
+    }
     return Container(
       child: Center(
-        child: Text("StateFull Hello! = " + i.toString()),
+        child: Text(runtimeType() + " -- Statefull runtime type"),
       ),
     );
   }
