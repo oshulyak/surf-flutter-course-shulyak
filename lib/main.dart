@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import "package:places/ui/screen/sight_list_screen.dart";
 
-void main() {
-  runApp(App());
-}
+void main() => runApp(App());
 
 class App extends StatelessWidget {
   @override
@@ -10,10 +9,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Title of the MaterialApp',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),      
-      home: const MyFirstWidget(),
+      ),
+      home: SightListScreen(),
       // home: const MyFirstSfWidget(),
     );
   }
@@ -21,16 +20,16 @@ class App extends StatelessWidget {
 
 class MyFirstWidget extends StatelessWidget {
   @override
-  
   const MyFirstWidget();
 
   Widget build(BuildContext context) {
-    String runtimeType(){
+    String runtimeType() {
       return context.runtimeType.toString();
     }
-      return Container(
+
+    return Container(
       child: Center(
-        child: Text(runtimeType()+ " -- Stateless runtime type"),
+        child: Text(runtimeType() + " -- Stateless runtime type"),
       ),
     );
   }
@@ -47,9 +46,10 @@ class MyFirstSfWidget extends StatefulWidget {
 
 class _AppState extends State<MyFirstSfWidget> {
   Widget build(BuildContext context) {
-    String runtimeType(){
+    String runtimeType() {
       return context.runtimeType.toString();
     }
+
     return Container(
       child: Center(
         child: Text(runtimeType() + " -- Statefull runtime type"),
