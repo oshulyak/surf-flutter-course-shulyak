@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SightListScreen extends StatefulWidget {
-  @override
-  final String title = 'Places';
+  final String title = 'Список интересных мест';
   _SightListScreenState createState() => _SightListScreenState();
 }
 
@@ -39,16 +38,41 @@ class _SightListScreenState extends State<SightListScreen> {
         ),
       ),
 
-      body: Column(
-        children: [
-          Text('Some text'),
-          TextField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(), hintText: 'Enter some text'),
-          )
-        ],
+      // body: Column(
+      //   children: [
+      //     Text('Some text'),
+      //     TextField(
+      //       decoration: InputDecoration(
+      //           border: OutlineInputBorder(), hintText: 'Enter some text'),
+      //     )
+      //   ],
+      // ),
+
+      body: Center(
+        child: Container(
+          color: Colors.yellow,
+          width: double.infinity,
+          height: 50,
+          child: RichText(
+            textAlign: TextAlign.end,
+            text: TextSpan(
+                text: 'Short Text',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+                children: [
+                  TextSpan(
+                    text: 'Text Rich',
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 20,
+                    ),
+                  ),
+                ]),
+            maxLines: 1,
+          ),
+        ),
       ),
-      // body: getBody('input text'),
 
       floatingActionButton: FloatingActionButton(
         onPressed: () => print('Action'),
