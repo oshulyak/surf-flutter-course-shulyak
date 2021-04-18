@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SightListScreen extends StatefulWidget {
-  final String title = 'Список интересных мест';
+  final String title = 'Places';
   _SightListScreenState createState() => _SightListScreenState();
 }
 
@@ -11,42 +11,19 @@ class _SightListScreenState extends State<SightListScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
-        title: Text(widget.title),
-        actions: [
-          IconButton(icon: Icon(Icons.alarm), onPressed: () => print('Alarm!'))
-        ],
-        bottom: PreferredSize(
-          child: Text('bottom'),
-          preferredSize: Size.fromHeight(10),
-        ),
-      ),
-
-      drawer: Container(
-        color: Colors.grey,
-        width: 250,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            DrawerHeader(
-              child: Text('Drawer Header'),
-              decoration: BoxDecoration(color: Colors.blue),
+          toolbarHeight: 100,
+          title: Text(
+            "Список\nинтересных мест",
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 34,
             ),
-            ListTile(title: Text('item 1')),
-            ListTile(title: Text('item 2')),
-            ListTile(title: Text('item 3')),
-          ],
-        ),
-      ),
-
-      // body: Column(
-      //   children: [
-      //     Text('Some text'),
-      //     TextField(
-      //       decoration: InputDecoration(
-      //           border: OutlineInputBorder(), hintText: 'Enter some text'),
-      //     )
-      //   ],
-      // ),
+          ),
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          actions: []),
 
       body: Center(
         child: Container(
