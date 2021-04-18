@@ -8,21 +8,50 @@ class SightListScreen extends StatefulWidget {
 class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       resizeToAvoidBottomInset: true,
+      
       appBar: AppBar(
           toolbarHeight: 100,
-          title: Text(
-            "Список\nинтересных мест",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 34,
-            ),
-          ),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
+
+          title: RichText(
+            textAlign: TextAlign.left,
+
+            text: TextSpan(
+                //text: 'Short Text',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 34,
+                ),
+                children: [
+                  TextSpan(
+                    text: 'С',
+                    style: TextStyle(
+                      color: Colors.green,
+                    ),
+                  ),
+                  TextSpan(
+                    text: 'писок\n',
+                    style: TextStyle(
+                    ),
+                  ),  
+                  TextSpan(
+                    text: 'и',
+                    style: TextStyle(
+                      color: Colors.yellow,
+                    ),
+                  ),
+                  TextSpan(
+                    text: 'нтересных мест',
+                    style: TextStyle(
+                    ),
+                  ),  
+                ]),
+          ),
           actions: []),
 
       body: Center(
@@ -50,12 +79,10 @@ class _SightListScreenState extends State<SightListScreen> {
           ),
         ),
       ),
-
       floatingActionButton: FloatingActionButton(
         onPressed: () => print('Action'),
         child: Icon(Icons.add),
       ),
-
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
