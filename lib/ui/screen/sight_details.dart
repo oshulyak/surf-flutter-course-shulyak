@@ -100,7 +100,7 @@ class SightDetails extends StatelessWidget {
                   child: SizedBox(
                     width: double.infinity,
                     height: 50,
-                    child: ElevatedButton.icon(
+                    child: ElevatedButton.icon(                      
                       onPressed: null,
                       icon: Icon(Icons.directions),
                       label: Text(
@@ -122,7 +122,7 @@ class SightDetails extends StatelessWidget {
 
                             // side: BorderSide(color: Colors.red)
                           ))),
-                    ),
+                    ),                    
                   ),
                 ),
                 Divider(
