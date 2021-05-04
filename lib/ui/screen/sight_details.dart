@@ -110,7 +110,6 @@ class SightDetails extends StatelessWidget {
                         ),
                       ),
                       style: ButtonStyle(
-                          // textStyle: TextStyle(fontSize: 30),
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                           backgroundColor:
@@ -119,14 +118,11 @@ class SightDetails extends StatelessWidget {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
-
-                            // side: BorderSide(color: Colors.red)
                           ))),
                     ),                    
                   ),
                 ),
                 Divider(
-                  indent: 10,
                   color: Colors.grey,
                 ),
               ],
