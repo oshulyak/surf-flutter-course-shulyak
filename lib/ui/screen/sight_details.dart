@@ -95,11 +95,12 @@ class SightDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                Center(
-                  child: SizedBox(
+                Container(   
+                  margin: EdgeInsets.only(bottom: 15),               
+                  child: SizedBox(                    
                     width: double.infinity,
                     height: 50,
-                    child: ElevatedButton.icon(
+                    child: ElevatedButton.icon(                      
                       onPressed: null,
                       icon: Icon(Icons.directions),
                       label: Text(
@@ -121,9 +122,11 @@ class SightDetails extends StatelessWidget {
 
                             // side: BorderSide(color: Colors.red)
                           ))),
-                    ),
+                    ),                    
                   ),
                 ),
+                Divider(indent: 10,
+                color: Colors.grey,),
               ],
             ),
           ),
