@@ -95,7 +95,8 @@ class SightDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                Center(
+                Container(
+                  margin: EdgeInsets.only(bottom: 15),
                   child: SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -123,6 +124,10 @@ class SightDetails extends StatelessWidget {
                           ))),
                     ),
                   ),
+                ),
+                Divider(
+                  indent: 10,
+                  color: Colors.grey,
                 ),
               ],
             ),
