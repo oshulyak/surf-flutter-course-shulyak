@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/text_styles.dart';
 
 class SightDetails extends StatelessWidget {
   final Sight sight;
@@ -59,10 +60,7 @@ class SightDetails extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 5),
                   child: Text(
                     sight.name,
-                    style: TextStyle(
-                        color: Color(0xFF3B3E5B),
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold),
+                    style: textDetailsHead,
                   ),
                 ),
                 Row(
@@ -72,17 +70,13 @@ class SightDetails extends StatelessWidget {
                         margin: EdgeInsets.only(right: 20),
                         child: Text(
                           sight.type,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                          style: textDetailsType,
                         ),
                       ),
                     ),
                     Text(
                       'закрыто до 9:00',
-                      style: TextStyle(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 16,
-                          color: Color(0xFF7C7E92)),
+                      style: textSecondaryRegular16,
                     ),
                   ],
                 ),
@@ -90,9 +84,7 @@ class SightDetails extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 18, top: 18),
                   child: Text(
                     sight.details,
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
+                    style: textDetailsText,
                   ),
                 ),
                 Container(
@@ -105,9 +97,7 @@ class SightDetails extends StatelessWidget {
                       icon: Icon(Icons.directions),
                       label: Text(
                         "Построить маршрут".toUpperCase(),
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
+                        style: textBtnWhite,
                       ),
                       style: ButtonStyle(
                           foregroundColor:
@@ -136,9 +126,7 @@ class SightDetails extends StatelessWidget {
                 icon: Icon(Icons.calendar_today),
                 label: Text(
                   "Запланировать",
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
+                  style: textBtn,
                 ),
               ),
               FlatButton.icon(
@@ -146,9 +134,7 @@ class SightDetails extends StatelessWidget {
                 icon: Icon(Icons.favorite),
                 label: Text(
                   "В Избранное",
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
+                  style: textBtn,
                 ),
               ),
             ],
