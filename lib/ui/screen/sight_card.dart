@@ -17,10 +17,13 @@ class SightCard extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            Image.asset(
-              sight.url,
-              color: Colors.black.withOpacity(0.2),
-              colorBlendMode: BlendMode.srcOver,
+            AspectRatio(
+              aspectRatio: 3/2,
+                          child: Image.asset(
+                sight.url,
+                color: Colors.black.withOpacity(0.2),
+                colorBlendMode: BlendMode.srcOver,
+              ),
             ),
             Container(
               color: bgGrey,
@@ -29,18 +32,21 @@ class SightCard extends StatelessWidget {
               // height: 70,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [   
-                  SizedBox(height: 20),               
+                children: [
+                  // SizedBox(height: 20),
                   Container(
                     margin: EdgeInsets.only(bottom: 10),
-                    child: ConstrainedBox(
-                        constraints: BoxConstraints(
-                          maxWidth: 200,
-                        ),
-                        child: Text(
-                          sight.name,
-                          style: textCardHead,
-                        )),
+                    // child:
+                    // ConstrainedBox(
+                    //     constraints: BoxConstraints(
+                    //       maxWidth: 200,
+                    //     ),
+                    child: Text(
+                      sight.name,
+                      style: textCardHead,
+                    )
+                    // )
+                    ,
                   ),
                   Container(
                     // margin: EdgeInsets.all(20),
