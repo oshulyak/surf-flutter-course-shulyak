@@ -26,7 +26,7 @@ class _SightListScreenState extends State<SightListScreen> {
         body: SingleChildScrollView(
             child: Column(
           children: [
-            SightDetails(mocks[2]),     // DETAILS
+            // SightDetails(mocks[2]),     // DETAILS
 
             SightCard(               // LIST
               mocks[0],

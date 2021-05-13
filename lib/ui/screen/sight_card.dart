@@ -31,10 +31,14 @@ class SightCard extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.only(bottom: 10),
-                    child: Text(
-                      sight.name,
-                      style: textCardHead,
-                    ),
+                    child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: 200,
+                        ),
+                        child: Text(
+                          sight.name,
+                          style: textCardHead,
+                        )),
                   ),
                   Container(
                     // margin: EdgeInsets.all(20),
