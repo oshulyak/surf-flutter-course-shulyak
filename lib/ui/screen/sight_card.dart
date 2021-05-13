@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/text_styles.dart';
+import 'package:places/ui/res/colors.dart';
 
 class SightCard extends StatelessWidget {
   final Sight sight;
@@ -22,13 +23,14 @@ class SightCard extends StatelessWidget {
               colorBlendMode: BlendMode.srcOver,
             ),
             Container(
-              color: Color(0xFFF5F5F5),
+              color: bgGrey,
               padding: EdgeInsets.all(16),
               width: double.infinity,
               // height: 70,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: [   
+                  SizedBox(height: 20),               
                   Container(
                     margin: EdgeInsets.only(bottom: 10),
                     child: ConstrainedBox(

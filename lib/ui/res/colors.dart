@@ -20,7 +20,8 @@ const Color
     // white = _white,
     dividerColor = _solitude,
     // textColorPrimary = _oxfordBlue,
-    textColorGrey = _grey;
+    textColorGrey = _grey,
+    bgGrey = Color(0xFFF5F5F5);
 
 // Основная палитра (http://www.color-blindness.com/color-name-hue/)
 const Color 
