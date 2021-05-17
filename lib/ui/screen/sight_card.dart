@@ -17,14 +17,15 @@ class SightCard extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            AspectRatio(
-              aspectRatio: 3/2,
-                          child: Image.asset(
+            // AspectRatio(
+            //   aspectRatio: 3 / 2,
+              // child: 
+              Image.asset(
                 sight.url,
                 color: Colors.black.withOpacity(0.2),
                 colorBlendMode: BlendMode.srcOver,
               ),
-            ),
+            // ),
             Container(
               color: bgGrey,
               padding: EdgeInsets.all(16),
