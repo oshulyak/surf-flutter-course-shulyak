@@ -9,7 +9,7 @@ final List mocks = [
       details: 'краткое описание музея',
       type: 'музей'),
   Sight(
-      name: 'Токийский центральный парт',
+      name: 'Токийский центральный парк',
       lat: 54.32323,
       lon: 43.123423,
       url: "assets/img/foto/foto2.jpg",
