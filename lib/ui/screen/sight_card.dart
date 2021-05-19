@@ -14,43 +14,49 @@ class SightCard extends StatelessWidget {
       padding: EdgeInsets.all(10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15.0),
-        child: Stack(
+        child: Stack(          
           alignment: Alignment.bottomCenter,
           children: [
-            // AspectRatio(
-            //   aspectRatio: 3 / 2,
-              // child: 
-              Image.asset(
-                sight.url,
-                color: Colors.black.withOpacity(0.2),
-                colorBlendMode: BlendMode.srcOver,
-              ),
-            // ),
+            SizedBox(
+              height: 220,
+              child: Image.network(
+                  sight.url,
+                  fit: BoxFit.fill,
+                  color: Colors.black.withOpacity(0.2),
+                  colorBlendMode: BlendMode.srcOver,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 100),
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes
+                              : null,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+            ),
+            
             Container(
               color: bgGrey,
               padding: EdgeInsets.all(16),
               width: double.infinity,
-              // height: 70,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // SizedBox(height: 20),
                   Container(
                     margin: EdgeInsets.only(bottom: 10),
-                    // child:
-                    // ConstrainedBox(
-                    //     constraints: BoxConstraints(
-                    //       maxWidth: 200,
-                    //     ),
                     child: Text(
                       sight.name,
                       style: textCardHead,
-                    )
-                    // )
-                    ,
+                    ),
                   ),
                   Container(
-                    // margin: EdgeInsets.all(20),
                     child: Text(
                       sight.details,
                       style: textCardSecondary,
