@@ -15,8 +15,27 @@ class SightDetails extends StatelessWidget {
           Stack(
             alignment: Alignment.bottomCenter,
             children: [
-              Image.asset(
-                sight.url,
+              Center(
+                child: SizedBox(
+                  height: 360,
+                  child: Image.network(
+                    sight.url,
+                    fit: BoxFit.fill,
+
+                    loadingBuilder: (BuildContext context, Widget child,
+                        ImageChunkEvent loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes
+                              : null,
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
               Positioned.fill(
                 child: Align(
@@ -92,7 +111,7 @@ class SightDetails extends StatelessWidget {
                   child: SizedBox(
                     width: double.infinity,
                     height: 50,
-                    child: ElevatedButton.icon(                      
+                    child: ElevatedButton.icon(
                       onPressed: null,
                       icon: Icon(Icons.directions),
                       label: Text(
@@ -109,7 +128,7 @@ class SightDetails extends StatelessWidget {
                                   RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ))),
-                    ),                    
+                    ),
                   ),
                 ),
                 Divider(
