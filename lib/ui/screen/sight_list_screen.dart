@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/screen/sight_card.dart';
-// import 'package:places/ui/screen/sight_details.dart';
-import 'package:places/ui/screen/my_app_bar.dart';
+import 'package:places/ui/screen/sight_details.dart';
 
 class SightListScreen extends StatefulWidget {
   final String title = 'Places';
@@ -14,7 +13,7 @@ class _SightListScreenState extends State<SightListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: true,
-        appBar: MyAppBar(
+        appBar: AppBar(
             toolbarHeight: 100,
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
@@ -27,21 +26,21 @@ class _SightListScreenState extends State<SightListScreen> {
         body: SingleChildScrollView(
             child: Column(
           children: [
-            // SightDetails(mocks[2]),     // DETAILS
+            SightDetails(mocks[2]),     // DETAILS
 
-            SightCard(
-              // LIST
-              mocks[0],
-            ),
-            SightCard(
-              mocks[1],
-            ),
-            SightCard(
-              mocks[0],
-            ),
-            SightCard(
-              mocks[1],
-            ),
+            // SightCard(
+            //   // LIST BEGIN
+            //   mocks[0],
+            // ),
+            // SightCard(
+            //   mocks[1],
+            // ),
+            // SightCard(
+            //   mocks[0],
+            // ),
+            // SightCard(
+            //   mocks[1],
+            // ), // LIST END
           ],
         )));
   }
